@@ -1,0 +1,68 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "cropperjs/dist/cropper.css";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-y: var(--y);
+  --color-p: var(--p);
+  --color-c: var(--c);
+  --color-g: var(--g);
+  --color-o: var(--o);
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+}
+
+:root {
+  --bg: #fef3c7;
+  --ink: #000000;
+  --y: #fde047;
+  --p: #f9a8d4;
+  --c: #67e8f9;
+  --g: #86efac;
+  --o: #fdba74;
+}
+
+@layer base {
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility nb-border {
+  border: 3px solid #000;
+}
+@utility nb-shadow {
+  box-shadow: 6px 6px 0 0 #000;
+}
+@utility nb-shadow-sm {
+  box-shadow: 4px 4px 0 0 #000;
+}
+@utility nb-btn {
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 0 #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  transition: transform 60ms ease, box-shadow 60ms ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+@utility nb-btn-press {
+  &:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 0 #000;
+  }
+}
